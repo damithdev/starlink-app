@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: starlink-cluster
-        image: gcr.io/GOOGLE_CLOUD_PROJECT/starlink-cluster:COMMIT_SHA
+        image: gcr.io/GOOGLE_CLOUD_PROJECT/starlink-cloudbuild:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
