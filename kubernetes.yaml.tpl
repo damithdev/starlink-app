@@ -15,32 +15,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: starlink-cloudbuild
+  name: starlink-cluster
   labels:
-    app: starlink-cloudbuild
+    app: starlink-cluster
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: starlink-cloudbuild
+      app: starlink-cluster
   template:
     metadata:
       labels:
-        app: starlink-cloudbuild
+        app: starlink-cluster
     spec:
       containers:
-      - name: starlink-cloudbuild
-        image: gcr.io/GOOGLE_CLOUD_PROJECT/starlink-cloudbuild:COMMIT_SHA
+      - name: starlink-cluster
+        image: gcr.io/GOOGLE_CLOUD_PROJECT/starlink-cluster:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: starlink-cloudbuild
+  name: starlink-cluster
 spec:
   selector:
-    app: starlink-cloudbuild
+    app: starlink-cluster
   ports:
   - protocol: TCP
     port: 80
