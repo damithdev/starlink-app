@@ -19,7 +19,7 @@ metadata:
   labels:
     app: starlink-cluster
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: starlink-cluster
